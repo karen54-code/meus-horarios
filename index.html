@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>August 2025 Working Hours Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+        .summary {
+            background-color: #f1f8ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border-left: 4px solid #3498db;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #e8f4fc;
+        }
+        .overtime {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Working Hours Report</h1>
+            <p class="subtitle">August 2025</p>
+        </div>
+        
+        <div class="summary">
+            <h3>Monthly Summary</h3>
+            <p>Total overtime in August: <strong>59 hours and 48 minutes</strong></p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                    <th>Total Hours</th>
+                    <th>Overtime</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>08/01</td><td>05:40 – 08:30 (2h50)</td><td>10:30 – 12:50 (2h20)</td><td>16:15 – 20:30 (4h15)</td><td>9h25</td><td class="overtime">1h25</td></tr>
+                <tr><td>08/02</td><td>06:00 – 09:00 (3h00)</td><td>10:30 – 13:00 (2h30)</td><td>18:20 – 20:10 (1h50)</td><td>10h20</td><td class="overtime">2h20</td></tr>
+                <tr><td>08/03</td><td>05:40 – 08:30 (2h50)</td><td>10:30 – 13:15 (2h45)</td><td>-</td><td>5h35</td><td>0h</td></tr>
+                <tr><td>08/04</td><td>05:50 – 08:20 (2h30)</td><td>10:00 – 12:10 (2h10)</td><td>-</td><td>13h48</td><td class="overtime">5h48</td></tr>
+                <tr><td>08/05</td><td>07:00 – 09:30 (2h30)</td><td>10:30 – 13:00 (2h30)</td><td>16:00 – 20:15 (4h15)</td><td>9h15</td><td class="overtime">1h15</td></tr>
+                <tr><td>08/06</td><td>05:38 – 14:30 (8h52)</td><td>-</td><td>17:00 – 20:30 (3h30)</td><td>12h22</td><td class="overtime">4h22</td></tr>
+                <tr><td>08/07</td><td>05:40 – 08:00 (2h20)</td><td>-</td><td>-</td><td>7h20</td><td>0h</td></tr>
+                <tr><td>08/08</td><td colspan="3">07:20 – 20:20 (13h00)</td><td>13h00</td><td class="overtime">5h00</td></tr>
+                <tr><td>08/09</td><td colspan="2">06:00 – 14:00 (8h00)</td><td>15:45 – 21:00 (5h15)</td><td>13h15</td><td class="overtime">5h15</td></tr>
+                <tr><td>08/10</td><td>05:10 – 11:40 (6h30)</td><td colspan="2">14:20 – 20:50 (6h30)</td><td>13h00</td><td class="overtime">5h00</td></tr>
+                <tr><td>08/11</td><td>05:00 – 05:50 (0h50)</td><td>10:00 – 14:00 (4h00)</td><td>17:00 – 20:30 (3h30)</td><td>8h20</td><td class="overtime">0h20</td></tr>
+                <tr><td>08/12</td><td>05:20 – 09:00 (3h40)</td><td>10:30 – 13:10 (2h40)</td><td>17:00 – 20:27 (3h27)</td><td>9h47</td><td class="overtime">1h47</td></tr>
+                <tr><td>08/13</td><td>05:40 – 09:00 (3h20)</td><td colspan="2">10:30 – 20:14 (9h44)</td><td>13h04</td><td class="overtime">5h04</td></tr>
+                <tr><td>08/14</td><td>05:20 – 08:50 (3h30)</td><td>10:30 – 13:50 (3h20)</td><td>17:00 – 20:20 (3h20)</td><td>10h10</td><td class="overtime">2h10</td></tr>
+                <tr><td>08/15</td><td>05:35 – 08:50 (3h15)</td><td>10:30 – 13:15 (2h45)</td><td>17:05 – 20:00 (2h55)</td><td>8h55</td><td class="overtime">0h55</td></tr>
+                <tr><td>08/16</td><td>05:40 – 08:15 (2h35)</td><td>10:30 – 13:00 (2h30)</td><td>17:10 – 20:20 (3h10)</td><td>8h15</td><td class="overtime">0h15</td></tr>
+                <tr><td>08/17</td><td>05:15 – 08:00 (2h45)</td><td>10:30 – 13:35 (3h05)</td><td>17:00 – 20:30 (3h30)</td><td>9h20</td><td class="overtime">1h20</td></tr>
+                <tr><td>08/18</td><td>05:45 – 08:45 (3h00)</td><td>10:30 – 13:15 (2h45)</td><td>17:00 – 20:30 (3h30)</td><td>9h15</td><td class="overtime">1h15</td></tr>
+                <tr><td>08/19</td><td>05:50 – 08:45 (2h55)</td><td>09:50 – 12:30 (2h40)</td><td>15:45 – 21:07 (5h22)</td><td>10h57</td><td class="overtime">2h57</td></tr>
+                <tr><td>08/20</td><td>05:10 – 08:45 (3h35)</td><td>10:00 – 14:00 (4h00)</td><td>15:45 – 20:00 (4h15)</td><td>11h50</td><td class="overtime">3h50</td></tr>
+                <tr><td>08/21</td><td colspan="2">05:20 – 11:50 (6h30)</td><td>15:45 – 20:10 (4h25)</td><td>10h55</td><td class="overtime">2h55</td></tr>
+                <tr><td>08/22</td><td>05:40 – 08:45 (3h05)</td><td>10:10 – 12:40 (2h30)</td><td>16:00 – 19:45 (3h45)</td><td>9h20</td><td class="overtime">1h20</td></tr>
+                <tr><td>08/23</td><td>05:45 – 08:45 (3h00)</td><td>10:35 – 13:30 (2h55)</td><td>17:10 – 20:10 (3h00)</td><td>8h55</td><td class="overtime">0h55</td></tr>
+                <tr><td>08/24</td><td>05:45 – 08:30 (2h45)</td><td>10:10 – 13:10 (3h00)</td><td>15:45 – 20:00 (4h15)</td><td>10h00</td><td class="overtime">2h00</td></tr>
+                <tr><td>08/25</td><td colspan="2">05:45 – 12:30 (6h45)</td><td>17:00 – 20:30 (3h30)</td><td>10h15</td><td class="overtime">2h15</td></tr>
+                <tr><td>08/26</td><td>05:50 – 08:45 (2h55)</td><td>10:15 – 12:35 (2h20)</td><td>17:00 – 19:55 (2h55)</td><td>8h10</td><td class="overtime">0h10</td></tr>
+                <tr><td>08/27</td><td>05:50 – 07:24 (1h34)</td><td>-</td><td>-</td><td>1h34</td><td>0h</td></tr>
+                <tr class="total-row">
+                    <td colspan="4" style="text-align: right;">TOTAL OVERTIME HOURS:</td>
+                    <td colspan="2">59 hours and 48 minutes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p>Report generated on: August 28, 2025</p>
+        </div>
+    </div>
+</body>
+</html>
