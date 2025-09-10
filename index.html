@@ -14,24 +14,24 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 15px;
+            padding: 10px;
             color: #333;
             background-color: #f8f9fa;
             line-height: 1.6;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
             background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 8px;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 2px solid #2c3e50;
             padding-bottom: 15px;
         }
@@ -39,154 +39,160 @@
         h1 {
             color: #2c3e50;
             margin: 0 0 5px 0;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
         
         .subtitle {
             color: #7f8c8d;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         
         .summary {
             background-color: #f1f8ff;
-            padding: 15px;
+            padding: 12px;
             border-radius: 6px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border-left: 4px solid #3498db;
         }
         
         .summary h3 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #2c3e50;
+            font-size: 1.1rem;
         }
         
-        .table-container {
-            overflow-x: auto;
-            margin-bottom: 25px;
-            width: 100%;
+        .summary p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
         }
         
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
+        .day-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 12px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         
-        th, td {
-            padding: 10px 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
         }
         
-        th {
+        .date {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+        
+        .total-hours {
             background-color: #2c3e50;
             color: white;
-            position: sticky;
-            top: 0;
-            font-weight: 600;
-        }
-        
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-        
-        .total-row {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.85rem;
             font-weight: bold;
-            background-color: #e8f4fc;
         }
         
         .overtime {
-            color: #e74c3c;
+            background-color: #e74c3c;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.85rem;
             font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .period {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 6px 0;
+            border-bottom: 1px dashed #f0f0f0;
+        }
+        
+        .period-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+            width: 35%;
+        }
+        
+        .period-time {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            width: 65%;
+            text-align: right;
+        }
+        
+        .notes {
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #fff8e1;
+            border-radius: 6px;
+            border-left: 3px solid #ffc107;
+            font-size: 0.85rem;
+            color: #7d6608;
         }
         
         .footer {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 25px;
             color: #7f8c8d;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
         }
         
-        .notes {
-            font-style: italic;
-            color: #7f8c8d;
+        .month-total {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .month-total h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .month-total p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        /* Filtro de dias */
+        .filter {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .filter-btn {
+            background-color: #ecf0f1;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
             font-size: 0.85rem;
-            max-width: 200px;
+            cursor: pointer;
+            flex-grow: 1;
+            text-align: center;
+            max-width: 120px;
         }
         
-        /* Responsividade para tablets */
-        @media (max-width: 992px) {
-            .container {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 1.6rem;
-            }
-            
-            th, td {
-                padding: 8px 10px;
-                font-size: 0.9rem;
-            }
-        }
-        
-        /* Responsividade para celulares */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                padding: 12px;
-                border-radius: 6px;
-            }
-            
-            h1 {
-                font-size: 1.4rem;
-            }
-            
-            .subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .summary {
-                padding: 12px;
-            }
-            
-            th, td {
-                padding: 6px 8px;
-                font-size: 0.85rem;
-            }
-            
-            .notes {
-                font-size: 0.8rem;
-                max-width: 150px;
-            }
-        }
-        
-        /* Responsividade para celulares pequenos */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.3rem;
-            }
-            
-            th, td {
-                padding: 5px 6px;
-                font-size: 0.8rem;
-            }
-            
-            .header {
-                padding-bottom: 10px;
-                margin-bottom: 15px;
-            }
-            
-            .summary {
-                font-size: 0.9rem;
-            }
-            
-            .footer {
-                font-size: 0.8rem;
-            }
+        .filter-btn.active {
+            background-color: #3498db;
+            color: white;
         }
         
         /* Estilos para impressão */
@@ -194,7 +200,6 @@
             body {
                 background-color: white;
                 padding: 0;
-                font-size: 12pt;
             }
             
             .container {
@@ -204,31 +209,12 @@
                 max-width: 100%;
             }
             
-            .summary {
-                border: 1px solid #ccc;
-            }
-            
-            th {
-                position: static;
-                background-color: #f0f0f0 !important;
-                color: black !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            
-            .overtime {
-                color: black !important;
-                font-weight: bold;
-            }
-            
-            /* Evitar quebras de linha dentro das células */
-            td, th {
+            .day-card {
                 page-break-inside: avoid;
             }
             
-            /* Evitar quebras de linha nas linhas */
-            tr {
-                page-break-inside: avoid;
+            .filter {
+                display: none;
             }
         }
     </style>
@@ -245,59 +231,673 @@
             <p>Total de horas extras em agosto: <strong>59 horas e 48 minutos</strong></p>
             <p>Jornada padrão considerada: 8 horas por dia</p>
         </div>
+        
+        <div class="filter">
+            <button class="filter-btn active" onclick="filterDays('all')">Todos</button>
+            <button class="filter-btn" onclick="filterDays('overtime')">Com Extras</button>
+            <button class="filter-btn" onclick="filterDays('notes')">Com Observações</button>
+        </div>
 
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Café da Manhã</th>
-                        <th>Almoço</th>
-                        <th>Janta</th>
-                        <th>Total</th>
-                        <th>Extras</th>
-                        <th>Observações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>01/08</td><td>05:40 – 08:30 (2h50)</td><td>10:30 – 12:50 (2h20)</td><td>16:15 – 20:30 (4h15)</td><td>9h25</td><td class="overtime">1h25</td><td class="notes"></td></tr>
-                    <tr><td>02/08</td><td>06:00 – 09:00 (3h00)</td><td>10:30 – 13:00 (2h30)</td><td>18:20 – 20:10 (1h50)</td><td>10h20</td><td class="overtime">2h20</td><td class="notes">Trabalhei com kaiaque: 15:00 – 18:00</td></tr>
-                    <tr><td>03/08</td><td>05:40 – 08:30 (2h50)</td><td>10:30 – 13:15 (2h45)</td><td>-</td><td>5h35</td><td>0h</td><td class="notes"></td></tr>
-                    <tr><td>04/08</td><td>05:50 – 08:20 (2h30)</td><td>10:00 – 12:10 (2h10)</td><td>-</td><td>13h48</td><td class="overtime">5h48</td><td class="notes">Compras: 12:22 – 21:30</td></tr>
-                    <tr><td>05/08</td><td>07:00 – 09:30 (2h30)</td><td>10:30 – 13:00 (2h30)</td><td>16:00 – 20:15 (4h15)</td><td>9h15</td><td class="overtime">1h15</td><td class="notes"></td></tr>
-                    <tr><td>06/08</td><td>05:38 – 14:30 (8h52)</td><td>-</td><td>17:00 – 20:30 (3h30)</td><td>12h22</td><td class="overtime">4h22</td><td class="notes"></td></tr>
-                    <tr><td>07/08</td><td>05:40 – 08:00 (2h20)</td><td>-</td><td>-</td><td>7h20</td><td>0h</td><td class="notes">Aventura: 13:00 – 18:00</td></tr>
-                    <tr><td>08/08</td><td colspan="3">07:20 – 20:20 (13h00)</td><td>13h00</td><td class="overtime">5h00</td><td class="notes"></td></tr>
-                    <tr><td>09/08</td><td colspan="2">06:00 – 14:00 (8h00)</td><td>15:45 – 21:00 (5h15)</td><td>13h15</td><td class="overtime">5h15</td><td class="notes">Café/Almoço direto</td></tr>
-                    <tr><td>10/08</td><td>05:10 – 11:40 (6h30)</td><td colspan="2">14:20 – 20:50 (6h30)</td><td>13h00</td><td class="overtime">5h00</td><td class="notes">Almoço/Janta direto</td></tr>
-                    <tr><td>11/08</td><td>05:00 – 05:50 (0h50)</td><td>10:00 – 14:00 (4h00)</td><td>17:00 – 20:30 (3h30)</td><td>8h20</td><td class="overtime">0h20</td><td class="notes"></td></tr>
-                    <tr><td>12/08</td><td>05:20 – 09:00 (3h40)</td><td>10:30 – 13:10 (2h40)</td><td>17:00 – 20:27 (3h27)</td><td>9h47</td><td class="overtime">1h47</td><td class="notes"></td></tr>
-                    <tr><td>13/08</td><td>05:40 – 09:00 (3h20)</td><td colspan="2">10:30 – 20:14 (9h44)</td><td>13h04</td><td class="overtime">5h04</td><td class="notes">Almoço/Janta direto</td></tr>
-                    <tr><td>14/08</td><td>05:20 – 08:50 (3h30)</td><td>10:30 – 13:50 (3h20)</td><td>17:00 – 20:20 (3h20)</td><td>10h10</td><td class="overtime">2h10</td><td class="notes"></td></tr>
-                    <tr><td>15/08</td><td>05:35 – 08:50 (3h15)</td><td>10:30 – 13:15 (2h45)</td><td>17:05 – 20:00 (2h55)</td><td>8h55</td><td class="overtime">0h55</td><td class="notes"></td></tr>
-                    <tr><td>16/08</td><td>05:40 – 08:15 (2h35)</td><td>10:30 – 13:00 (2h30)</td><td>17:10 – 20:20 (3h10)</td><td>8h15</td><td class="overtime">0h15</td><td class="notes"></td></tr>
-                    <tr><td>17/08</td><td>05:15 – 08:00 (2h45)</td><td>10:30 – 13:35 (3h05)</td><td>17:00 – 20:30 (3h30)</td><td>9h20</td><td class="overtime">1h20</td><td class="notes"></td></tr>
-                    <tr><td>18/08</td><td>05:45 – 08:45 (3h00)</td><td>10:30 – 13:15 (2h45)</td><td>17:00 – 20:30 (3h30)</td><td>9h15</td><td class="overtime">1h15</td><td class="notes"></td></tr>
-                    <tr><td>19/08</td><td>05:50 – 08:45 (2h55)</td><td>09:50 – 12:30 (2h40)</td><td>15:45 – 21:07 (5h22)</td><td>10h57</td><td class="overtime">2h57</td><td class="notes"></td></tr>
-                    <tr><td>20/08</td><td>05:10 – 08:45 (3h35)</td><td>10:00 – 14:00 (4h00)</td><td>15:45 – 20:00 (4h15)</td><td>11h50</td><td class="overtime">3h50</td><td class="notes"></td></tr>
-                    <tr><td>21/08</td><td colspan="2">05:20 – 11:50 (6h30)</td><td>15:45 – 20:10 (4h25)</td><td>10h55</td><td class="overtime">2h55</td><td class="notes">Café/Almoço direto</td></tr>
-                    <tr><td>22/08</td><td>05:40 – 08:45 (3h05)</td><td>10:10 – 12:40 (2h30)</td><td>16:00 – 19:45 (3h45)</td><td>9h20</td><td class="overtime">1h20</td><td class="notes"></td></tr>
-                    <tr><td>23/08</td><td>05:45 – 08:45 (3h00)</td><td>10:35 – 13:30 (2h55)</td><td>17:10 – 20:10 (3h00)</td><td>8h55</td><td class="overtime">0h55</td><td class="notes"></td></tr>
-                    <tr><td>24/08</td><td>05:45 – 08:30 (2h45)</td><td>10:10 – 13:10 (3h00)</td><td>15:45 – 20:00 (4h15)</td><td>10h00</td><td class="overtime">2h00</td><td class="notes"></td></tr>
-                    <tr><td>25/08</td><td colspan="2">05:45 – 12:30 (6h45)</td><td>17:00 – 20:30 (3h30)</td><td>10h15</td><td class="overtime">2h15</td><td class="notes">Café/Almoço direto</td></tr>
-                    <tr><td>26/08</td><td>05:50 – 08:45 (2h55)</td><td>10:15 – 12:35 (2h20)</td><td>17:00 – 19:55 (2h55)</td><td>8h10</td><td class="overtime">0h10</td><td class="notes"></td></tr>
-                    <tr><td>27/08</td><td>05:50 – 07:24 (1h34)</td><td>-</td><td>-</td><td>1h34</td><td>0h</td><td class="notes">entrando de folga</td></tr>
-                    <tr class="total-row">
-                        <td colspan="4" style="text-align: right;">TOTAL DE HORAS EXTRAS NO MÊS:</td>
-                        <td colspan="3"><strong>59 horas e 48 minutos</strong></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="month-total">
+            <h3>Total de Horas Extras no Mês</h3>
+            <p>59 horas e 48 minutos</p>
+        </div>
+
+        <div class="days-container">
+            <!-- Dia 01/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">01/08</span>
+                    <div>
+                        <span class="total-hours">9h25</span>
+                        <span class="overtime">+1h25</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:40 – 08:30 (2h50)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 12:50 (2h20)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">16:15 – 20:30 (4h15)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 02/08 -->
+            <div class="day-card" data-overtime="true" data-notes="true">
+                <div class="day-header">
+                    <span class="date">02/08</span>
+                    <div>
+                        <span class="total-hours">10h20</span>
+                        <span class="overtime">+2h20</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">06:00 – 09:00 (3h00)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 13:00 (2h30)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Kaiaque:</span>
+                    <span class="period-time">15:00 – 18:00 (3h00)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">18:20 – 20:10 (1h50)</span>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Trabalhei com kaiaque: 15:00 – 18:00
+                </div>
+            </div>
+            
+            <!-- Dia 03/08 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="date">03/08</span>
+                    <div>
+                        <span class="total-hours">5h35</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:40 – 08:30 (2h50)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 13:15 (2h45)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 04/08 -->
+            <div class="day-card" data-overtime="true" data-notes="true">
+                <div class="day-header">
+                    <span class="date">04/08</span>
+                    <div>
+                        <span class="total-hours">13h48</span>
+                        <span class="overtime">+5h48</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:50 – 08:20 (2h30)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:00 – 12:10 (2h10)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Compras:</span>
+                    <span class="period-time">12:22 – 21:30 (9h08)</span>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Compras: 12:22 – 21:30
+                </div>
+            </div>
+            
+            <!-- Dia 05/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">05/08</span>
+                    <div>
+                        <span class="total-hours">9h15</span>
+                        <span class="overtime">+1h15</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">07:00 – 09:30 (2h30)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 13:00 (2h30)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">16:00 – 20:15 (4h15)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 06/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">06/08</span>
+                    <div>
+                        <span class="total-hours">12h22</span>
+                        <span class="overtime">+4h22</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:38 – 14:30 (8h52)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:00 – 20:30 (3h30)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 07/08 -->
+            <div class="day-card" data-notes="true">
+                <div class="day-header">
+                    <span class="date">07/08</span>
+                    <div>
+                        <span class="total-hours">7h20</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:40 – 08:00 (2h20)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Aventura:</span>
+                    <span class="period-time">13:00 – 18:00 (5h00)</span>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Aventura: 13:00 – 18:00
+                </div>
+            </div>
+            
+            <!-- Dia 08/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">08/08</span>
+                    <div>
+                        <span class="total-hours">13h00</span>
+                        <span class="overtime">+5h00</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Expediente:</span>
+                    <span class="period-time">07:20 – 20:20 (13h00)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 09/08 -->
+            <div class="day-card" data-overtime="true" data-notes="true">
+                <div class="day-header">
+                    <span class="date">09/08</span>
+                    <div>
+                        <span class="total-hours">13h15</span>
+                        <span class="overtime">+5h15</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café/Almoço:</span>
+                    <span class="period-time">06:00 – 14:00 (8h00)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">15:45 – 21:00 (5h15)</span>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Café/Almoço direto
+                </div>
+            </div>
+            
+            <!-- Dia 10/08 -->
+            <div class="day-card" data-overtime="true" data-notes="true">
+                <div class="day-header">
+                    <span class="date">10/08</span>
+                    <div>
+                        <span class="total-hours">13h00</span>
+                        <span class="overtime">+5h00</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:10 – 11:40 (6h30)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço/Janta:</span>
+                    <span class="period-time">14:20 – 20:50 (6h30)</span>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Almoço/Janta direto
+                </div>
+            </div>
+            
+            <!-- Dia 11/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">11/08</span>
+                    <div>
+                        <span class="total-hours">8h20</span>
+                        <span class="overtime">+0h20</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:00 – 05:50 (0h50)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:00 – 14:00 (4h00)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:00 – 20:30 (3h30)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 12/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">12/08</span>
+                    <div>
+                        <span class="total-hours">9h47</span>
+                        <span class="overtime">+1h47</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:20 – 09:00 (3h40)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 13:10 (2h40)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:00 – 20:27 (3h27)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 13/08 -->
+            <div class="day-card" data-overtime="true" data-notes="true">
+                <div class="day-header">
+                    <span class="date">13/08</span>
+                    <div>
+                        <span class="total-hours">13h04</span>
+                        <span class="overtime">+5h04</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:40 – 09:00 (3h20)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço/Janta:</span>
+                    <span class="period-time">10:30 – 20:14 (9h44)</span>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Almoço/Janta direto
+                </div>
+            </div>
+            
+            <!-- Dia 14/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">14/08</span>
+                    <div>
+                        <span class="total-hours">10h10</span>
+                        <span class="overtime">+2h10</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:20 – 08:50 (3h30)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 13:50 (3h20)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:00 – 20:20 (3h20)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 15/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">15/08</span>
+                    <div>
+                        <span class="total-hours">8h55</span>
+                        <span class="overtime">+0h55</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:35 – 08:50 (3h15)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 13:15 (2h45)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:05 – 20:00 (2h55)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 16/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">16/08</span>
+                    <div>
+                        <span class="total-hours">8h15</span>
+                        <span class="overtime">+0h15</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:40 – 08:15 (2h35)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 13:00 (2h30)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:10 – 20:20 (3h10)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 17/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">17/08</span>
+                    <div>
+                        <span class="total-hours">9h20</span>
+                        <span class="overtime">+1h20</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:15 – 08:00 (2h45)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 13:35 (3h05)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:00 – 20:30 (3h30)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 18/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">18/08</span>
+                    <div>
+                        <span class="total-hours">9h15</span>
+                        <span class="overtime">+1h15</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:45 – 08:45 (3h00)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:30 – 13:15 (2h45)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:00 – 20:30 (3h30)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 19/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">19/08</span>
+                    <div>
+                        <span class="total-hours">10h57</span>
+                        <span class="overtime">+2h57</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:50 – 08:45 (2h55)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">09:50 – 12:30 (2h40)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">15:45 – 21:07 (5h22)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 20/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">20/08</span>
+                    <div>
+                        <span class="total-hours">11h50</span>
+                        <span class="overtime">+3h50</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:10 – 08:45 (3h35)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:00 – 14:00 (4h00)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">15:45 – 20:00 (4h15)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 21/08 -->
+            <div class="day-card" data-overtime="true" data-notes="true">
+                <div class="day-header">
+                    <span class="date">21/08</span>
+                    <div>
+                        <span class="total-hours">10h55</span>
+                        <span class="overtime">+2h55</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café/Almoço:</span>
+                    <span class="period-time">05:20 – 11:50 (6h30)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">15:45 – 20:10 (4h25)</span>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Café/Almoço direto
+                </div>
+            </div>
+            
+            <!-- Dia 22/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">22/08</span>
+                    <div>
+                        <span class="total-hours">9h20</span>
+                        <span class="overtime">+1h20</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:40 – 08:45 (3h05)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:10 – 12:40 (2h30)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">16:00 – 19:45 (3h45)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 23/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">23/08</span>
+                    <div>
+                        <span class="total-hours">8h55</span>
+                        <span class="overtime">+0h55</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:45 – 08:45 (3h00)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:35 – 13:30 (2h55)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:10 – 20:10 (3h00)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 24/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">24/08</span>
+                    <div>
+                        <span class="total-hours">10h00</span>
+                        <span class="overtime">+2h00</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:45 – 08:30 (2h45)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:10 – 13:10 (3h00)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">15:45 – 20:00 (4h15)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 25/08 -->
+            <div class="day-card" data-overtime="true" data-notes="true">
+                <div class="day-header">
+                    <span class="date">25/08</span>
+                    <div>
+                        <span class="total-hours">10h15</span>
+                        <span class="overtime">+2h15</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café/Almoço:</span>
+                    <span class="period-time">05:45 – 12:30 (6h45)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:00 – 20:30 (3h30)</span>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Café/Almoço direto
+                </div>
+            </div>
+            
+            <!-- Dia 26/08 -->
+            <div class="day-card" data-overtime="true">
+                <div class="day-header">
+                    <span class="date">26/08</span>
+                    <div>
+                        <span class="total-hours">8h10</span>
+                        <span class="overtime">+0h10</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:50 – 08:45 (2h55)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Almoço:</span>
+                    <span class="period-time">10:15 – 12:35 (2h20)</span>
+                </div>
+                <div class="period">
+                    <span class="period-name">Janta:</span>
+                    <span class="period-time">17:00 – 19:55 (2h55)</span>
+                </div>
+            </div>
+            
+            <!-- Dia 27/08 -->
+            <div class="day-card" data-notes="true">
+                <div class="day-header">
+                    <span class="date">27/08</span>
+                    <div>
+                        <span class="total-hours">1h34</span>
+                    </div>
+                </div>
+                <div class="period">
+                    <span class="period-name">Café da Manhã:</span>
+                    <span class="period-time">05:50 – 07:24 (1h34)</span>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Meio período, folga depois
+                </div>
+            </div>
+            
+            <!-- Dias de folga (28 a 31/08) -->
+            <div class="day-card" data-notes="true">
+                <div class="day-header">
+                    <span class="date">28/08 a 02/09</span>
+                    <div>
+                        <span class="total-hours">Folga</span>
+                    </div>
+                </div>
+                <div class="notes">
+                    <strong>Observação:</strong> Período de folga - Retorno em 02/09
+                </div>
+            </div>
+            
         </div>
 
         <div class="footer">
             <p>Relatório gerado em 10/09/2025</p>
         </div>
     </div>
+
+    <script>
+        function filterDays(type) {
+            // Ativar botão selecionado
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Filtrar dias
+            const days = document.querySelectorAll('.day-card');
+            
+            days.forEach(day => {
+                switch(type) {
+                    case 'all':
+                        day.style.display = 'block';
+                        break;
+                    case 'overtime':
+                        if (day.getAttribute('data-overtime') === 'true') {
+                            day.style.display = 'block';
+                        } else {
+                            day.style.display = 'none';
+                        }
+                        break;
+                    case 'notes':
+                        if (day.getAttribute('data-notes') === 'true') {
+                            day.style.display = 'block';
+                        } else {
+                            day.style.display = 'none';
+                        }
+                        break;
+                }
+            });
+        }
+    </script>
 </body>
 </html>
