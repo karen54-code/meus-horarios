@@ -19,6 +19,33 @@
             padding: 20px;
         }
         
+        /* Responsividade: wrapper para permitir scroll horizontal em tabelas largas */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            min-width: 760px; /* mantém layout em desktop, permitirá scroll em mobile */
+        }
+
+        th, td {
+            white-space: nowrap; /* evita quebra inconsistente nas células */
+        }
+
+        /* Ajustes para telas pequenas */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            header { padding: 18px; }
+            h1 { font-size: 1.4rem; }
+            .periodo { font-size: 1rem; }
+            th, td { padding: 8px 10px; font-size: 0.9rem; }
+            .card .valor { font-size: 1.4rem; }
+            /* reduz min-width da tabela para favorecer scroll e leitura */
+            table { min-width: 640px; }
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -217,576 +244,578 @@
         
         <section>
             <h2>Detalhamento por Dia</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Entrada</th>
-                        <th>Saída</th>
-                        <th>Atividades</th>
-                        <th>Horas Trabalhadas</th>
-                        <th>Saldo do Dia</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>29/07</td>
-                        <td>05:30 / 17:00</td>
-                        <td>10:00 / 21:00</td>
-                        <td>Café da manhã e janta</td>
-                        <td>8h30</td>
-                        <td class="positivo">+0h30</td>
-                    </tr>
-                    <tr>
-                        <td>30/07</td>
-                        <td>05:30 / 17:00</td>
-                        <td>10:00 / 20:30</td>
-                        <td>Café da manhã e janta</td>
-                        <td>8h00</td>
-                        <td>0h00</td>
-                    </tr>
-                    <tr>
-                        <td>31/07</td>
-                        <td>05:40 / 16:00</td>
-                        <td>10:30 / 20:20</td>
-                        <td>Café da manhã e janta</td>
-                        <td>9h10</td>
-                        <td class="positivo">+1h10</td>
-                    </tr>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Entrada</th>
+                            <th>Saída</th>
+                            <th>Atividades</th>
+                            <th>Horas Trabalhadas</th>
+                            <th>Saldo do Dia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>29/07</td>
+                            <td>05:30 / 17:00</td>
+                            <td>10:00 / 21:00</td>
+                            <td>Café da manhã e janta</td>
+                            <td>8h30</td>
+                            <td class="positivo">+0h30</td>
+                        </tr>
+                        <tr>
+                            <td>30/07</td>
+                            <td>05:30 / 17:00</td>
+                            <td>10:00 / 20:30</td>
+                            <td>Café da manhã e janta</td>
+                            <td>8h00</td>
+                            <td>0h00</td>
+                        </tr>
+                        <tr>
+                            <td>31/07</td>
+                            <td>05:40 / 16:00</td>
+                            <td>10:30 / 20:20</td>
+                            <td>Café da manhã e janta</td>
+                            <td>9h10</td>
+                            <td class="positivo">+1h10</td>
+                        </tr>
 
-                    <!-- Início de Agosto -->
-                    <tr class="month-start">
-                        <td colspan="6" style="text-align:center; background:#eef6ff; font-weight:bold;">Início de Agosto — 01/08</td>
-                    </tr>
+                        <!-- Início de Agosto -->
+                        <tr class="month-start">
+                            <td colspan="6" style="text-align:center; background:#eef6ff; font-weight:bold;">Início de Agosto — 01/08</td>
+                        </tr>
 +
-                    <tr>
-                        <td>01/08</td>
-                        <td>05:40 / 10:30 / 16:15</td>
-                        <td>08:30 / 12:50 / 20:30</td>
-                        <td>Três períodos de trabalho</td>
-                        <td>9h25</td>
-                        <td class="positivo">+1h25</td>
-                    </tr>
-                    <tr>
-                        <td>02/08</td>
-                        <td>06:00 / 10:30 / 15:00 / 18:20</td>
-                        <td>09:00 / 13:00 / 18:00 / 20:10</td>
-                        <td>Levar turistas para caiaque</td>
-                        <td>10h20</td>
-                        <td class="positivo">+2h20</td>
-                    </tr>
-                    <tr>
-                        <td>03/08</td>
-                        <td>05:40 / 10:30</td>
-                        <td>08:30 / 13:15</td>
-                        <td>Dois períodos de trabalho</td>
-                        <td>5h35</td>
-                        <td class="negativo">-2h25</td>
-                    </tr>
-                    <tr>
-                        <td>04/08</td>
-                        <td>05:50 / 10:00 / 12:22</td>
-                        <td>08:20 / 12:10 / 21:30</td>
-                        <td>Ida às compras</td>
-                        <td>13h18</td>
-                        <td class="positivo">+5h18</td>
-                    </tr>
-                    <tr>
-                        <td>05/08</td>
-                        <td>07:00 / 10:30 / 16:00</td>
-                        <td>09:30 / 13:00 / 20:15</td>
-                        <td>Café, almoço e janta</td>
-                        <td>9h15</td>
-                        <td class="positivo">+1h15</td>
-                    </tr>
-                    <tr>
-                        <td>06/08</td>
-                        <td>05:38 / 17:00</td>
-                        <td>14:30 / 20:30</td>
-                        <td>Jornada longa + janta</td>
-                        <td>12h22</td>
-                        <td class="positivo">+4h22</td>
-                    </tr>
-                    <tr>
-                        <td>07/08</td>
-                        <td>05:40 / 13:00</td>
-                        <td>08:00 / 18:00</td>
-                        <td>Aventura</td>
-                        <td>7h20</td>
-                        <td class="negativo">-0h40</td>
-                    </tr>
-                    <tr>
-                        <td>08/08</td>
-                        <td>07:20</td>
-                        <td>20:20</td>
-                        <td>Jornada completa</td>
-                        <td>13h00</td>
-                        <td class="positivo">+5h00</td>
-                    </tr>
-                    <tr>
-                        <td>09/08</td>
-                        <td>06:00 / 15:45</td>
-                        <td>14:00 / 21:00</td>
-                        <td>Café, almoço e janta</td>
-                        <td>13h15</td>
-                        <td class="positivo">+5h15</td>
-                    </tr>
-                    <tr>
-                        <td>10/08</td>
-                        <td>05:10 / 14:20</td>
-                        <td>11:40 / 20:50</td>
-                        <td>Café e almoço</td>
-                        <td>13h00</td>
-                        <td class="positivo">+5h00</td>
-                    </tr>
-                    <tr>
-                        <td>11/08</td>
-                        <td>05:00 / 10:00 / 17:00</td>
-                        <td>05:50 / 14:00 / 20:30</td>
-                        <td>Retorno para UeSo, almoço e janta</td>
-                        <td>11h20</td>
-                        <td class="positivo">+3h20</td>
-                    </tr>
-                    <tr>
-                        <td>12/08</td>
-                        <td>05:20 / 10:30 / 17:00</td>
-                        <td>09:00 / 13:10 / 20:27</td>
-                        <td>Três períodos de trabalho</td>
-                        <td>9h47</td>
-                        <td class="positivo">+1h47</td>
-                    </tr>
-                    <tr>
-                        <td>13/08</td>
-                        <td>05:40 / 10:30</td>
-                        <td>09:00 / 20:14</td>
-                        <td>Dois períodos de trabalho</td>
-                        <td>13h04</td>
-                        <td class="positivo">+5h04</td>
-                    </tr>
-                    <tr>
-                        <td>14/08</td>
-                        <td>05:20 / 10:30 / 17:00</td>
-                        <td>08:50 / 13:50 / 20:20</td>
-                        <td>Três períodos de trabalho</td>
-                        <td>10h10</td>
-                        <td class="positivo">+2h10</td>
-                    </tr>
-                    <tr>
-                        <td>15/08</td>
-                        <td>05:35 / 10:30 / 17:05</td>
-                        <td>08:50 / 13:15 / 20:00</td>
-                        <td>Três períodos de trabalho</td>
-                        <td>8h55</td>
-                        <td class="positivo">+0h55</td>
-                    </tr>
-                    <tr>
-                        <td>16/08</td>
-                        <td>05:40 / 10:30 / 17:10</td>
-                        <td>08:15 / 13:00 / 20:20</td>
-                        <td>Café, almoço e janta</td>
-                        <td>8h45</td>
-                        <td class="positivo">+0h45</td>
-                    </tr>
-                    <tr>
-                        <td>17/08</td>
-                        <td>05:15 / 10:30 / 17:00</td>
-                        <td>08:00 / 13:35 / 20:30</td>
-                        <td>Café, almoço e janta</td>
-                        <td>9h50</td>
-                        <td class="positivo">+1h50</td>
-                    </tr>
-                    <tr>
-                        <td>18/08</td>
-                        <td>05:45 / 10:30 / 17:00</td>
-                        <td>08:45 / 13:15 / 20:30</td>
-                        <td>Café, almoço e janta</td>
-                        <td>9h45</td>
-                        <td class="positivo">+1h45</td>
-                    </tr>
-                    <tr>
-                        <td>19/08</td>
-                        <td>05:50 / 09:50 / 15:45</td>
-                        <td>08:45 / 12:30 / 21:07</td>
-                        <td>Café, almoço e janta</td>
-                        <td>10h17</td>
-                        <td class="positivo">+2h17</td>
-                    </tr>
-                    <tr>
-                        <td>20/08</td>
-                        <td>05:10 / 10:00 / 15:45</td>
-                        <td>08:45 / 14:00 / 20:00</td>
-                        <td>Café, almoço e janta</td>
-                        <td>11h50</td>
-                        <td class="positivo">+3h50</td>
-                    </tr>
-                    <tr>
-                        <td>21/08</td>
-                        <td>05:20 / 15:45</td>
-                        <td>11:50 / 20:10</td>
-                        <td>Café/almoço e janta</td>
-                        <td>10h55</td>
-                        <td class="positivo">+2h55</td>
-                    </tr>
-                    <tr>
-                        <td>22/08</td>
-                        <td>05:40 / 10:10 / 16:00</td>
-                        <td>08:45 / 12:40 / 19:45</td>
-                        <td>Café, almoço e janta</td>
-                        <td>8h40</td>
-                        <td class="positivo">+0h40</td>
-                    </tr>
-                    <tr>
-                        <td>23/08</td>
-                        <td>05:45 / 10:35 / 17:10</td>
-                        <td>08:45 / 13:30 / 20:10</td>
-                        <td>Café, almoço e janta</td>
-                        <td>8h55</td>
-                        <td class="positivo">+0h55</td>
-                    </tr>
-                    <tr>
-                        <td>24/08</td>
-                        <td>05:45 / 10:10 / 15:45</td>
-                        <td>08:30 / 13:10 / 20:00</td>
-                        <td>Café, almoço e janta</td>
-                        <td>10h10</td>
-                        <td class="positivo">+2h10</td>
-                    </tr>
-                    <tr>
-                        <td>25/08</td>
-                        <td>05:45 / 17:00</td>
-                        <td>12:30 / 20:30</td>
-                        <td>Café/almoço e janta</td>
-                        <td>10h15</td>
-                        <td class="positivo">+2h15</td>
-                    </tr>
-                    <tr>
-                        <td>26/08</td>
-                        <td>05:50 / 10:15 / 17:00</td>
-                        <td>08:45 / 12:35 / 19:55</td>
-                        <td>Café, almoço e janta</td>
-                        <td>7h40</td>
-                        <td class="negativo">-0h20</td>
-                    </tr>
-                    <tr>
-                        <td>27/08</td>
-                        <td>05:50</td>
-                        <td>07:24</td>
-                        <td>Início da folga</td>
-                        <td>1h34</td>
-                        <td class="negativo">-6h26</td>
-                    </tr>
-                    <tr class="folga">
-                        <td>28/08 a 01/09</td>
-                        <td colspan="5" style="text-align: center;">PERÍODO DE FOLGA</td>
-                    </tr>
+                        <tr>
+                            <td>01/08</td>
+                            <td>05:40 / 10:30 / 16:15</td>
+                            <td>08:30 / 12:50 / 20:30</td>
+                            <td>Três períodos de trabalho</td>
+                            <td>9h25</td>
+                            <td class="positivo">+1h25</td>
+                        </tr>
+                        <tr>
+                            <td>02/08</td>
+                            <td>06:00 / 10:30 / 15:00 / 18:20</td>
+                            <td>09:00 / 13:00 / 18:00 / 20:10</td>
+                            <td>Levar turistas para caiaque</td>
+                            <td>10h20</td>
+                            <td class="positivo">+2h20</td>
+                        </tr>
+                        <tr>
+                            <td>03/08</td>
+                            <td>05:40 / 10:30</td>
+                            <td>08:30 / 13:15</td>
+                            <td>Dois períodos de trabalho</td>
+                            <td>5h35</td>
+                            <td class="negativo">-2h25</td>
+                        </tr>
+                        <tr>
+                            <td>04/08</td>
+                            <td>05:50 / 10:00 / 12:22</td>
+                            <td>08:20 / 12:10 / 21:30</td>
+                            <td>Ida às compras</td>
+                            <td>13h18</td>
+                            <td class="positivo">+5h18</td>
+                        </tr>
+                        <tr>
+                            <td>05/08</td>
+                            <td>07:00 / 10:30 / 16:00</td>
+                            <td>09:30 / 13:00 / 20:15</td>
+                            <td>Café, almoço e janta</td>
+                            <td>9h15</td>
+                            <td class="positivo">+1h15</td>
+                        </tr>
+                        <tr>
+                            <td>06/08</td>
+                            <td>05:38 / 17:00</td>
+                            <td>14:30 / 20:30</td>
+                            <td>Jornada longa + janta</td>
+                            <td>12h22</td>
+                            <td class="positivo">+4h22</td>
+                        </tr>
+                        <tr>
+                            <td>07/08</td>
+                            <td>05:40 / 13:00</td>
+                            <td>08:00 / 18:00</td>
+                            <td>Aventura</td>
+                            <td>7h20</td>
+                            <td class="negativo">-0h40</td>
+                        </tr>
+                        <tr>
+                            <td>08/08</td>
+                            <td>07:20</td>
+                            <td>20:20</td>
+                            <td>Jornada completa</td>
+                            <td>13h00</td>
+                            <td class="positivo">+5h00</td>
+                        </tr>
+                        <tr>
+                            <td>09/08</td>
+                            <td>06:00 / 15:45</td>
+                            <td>14:00 / 21:00</td>
+                            <td>Café, almoço e janta</td>
+                            <td>13h15</td>
+                            <td class="positivo">+5h15</td>
+                        </tr>
+                        <tr>
+                            <td>10/08</td>
+                            <td>05:10 / 14:20</td>
+                            <td>11:40 / 20:50</td>
+                            <td>Café e almoço</td>
+                            <td>13h00</td>
+                            <td class="positivo">+5h00</td>
+                        </tr>
+                        <tr>
+                            <td>11/08</td>
+                            <td>05:00 / 10:00 / 17:00</td>
+                            <td>05:50 / 14:00 / 20:30</td>
+                            <td>Retorno para UeSo, almoço e janta</td>
+                            <td>11h20</td>
+                            <td class="positivo">+3h20</td>
+                        </tr>
+                        <tr>
+                            <td>12/08</td>
+                            <td>05:20 / 10:30 / 17:00</td>
+                            <td>09:00 / 13:10 / 20:27</td>
+                            <td>Três períodos de trabalho</td>
+                            <td>9h47</td>
+                            <td class="positivo">+1h47</td>
+                        </tr>
+                        <tr>
+                            <td>13/08</td>
+                            <td>05:40 / 10:30</td>
+                            <td>09:00 / 20:14</td>
+                            <td>Dois períodos de trabalho</td>
+                            <td>13h04</td>
+                            <td class="positivo">+5h04</td>
+                        </tr>
+                        <tr>
+                            <td>14/08</td>
+                            <td>05:20 / 10:30 / 17:00</td>
+                            <td>08:50 / 13:50 / 20:20</td>
+                            <td>Três períodos de trabalho</td>
+                            <td>10h10</td>
+                            <td class="positivo">+2h10</td>
+                        </tr>
+                        <tr>
+                            <td>15/08</td>
+                            <td>05:35 / 10:30 / 17:05</td>
+                            <td>08:50 / 13:15 / 20:00</td>
+                            <td>Três períodos de trabalho</td>
+                            <td>8h55</td>
+                            <td class="positivo">+0h55</td>
+                        </tr>
+                        <tr>
+                            <td>16/08</td>
+                            <td>05:40 / 10:30 / 17:10</td>
+                            <td>08:15 / 13:00 / 20:20</td>
+                            <td>Café, almoço e janta</td>
+                            <td>8h45</td>
+                            <td class="positivo">+0h45</td>
+                        </tr>
+                        <tr>
+                            <td>17/08</td>
+                            <td>05:15 / 10:30 / 17:00</td>
+                            <td>08:00 / 13:35 / 20:30</td>
+                            <td>Café, almoço e janta</td>
+                            <td>9h50</td>
+                            <td class="positivo">+1h50</td>
+                        </tr>
+                        <tr>
+                            <td>18/08</td>
+                            <td>05:45 / 10:30 / 17:00</td>
+                            <td>08:45 / 13:15 / 20:30</td>
+                            <td>Café, almoço e janta</td>
+                            <td>9h45</td>
+                            <td class="positivo">+1h45</td>
+                        </tr>
+                        <tr>
+                            <td>19/08</td>
+                            <td>05:50 / 09:50 / 15:45</td>
+                            <td>08:45 / 12:30 / 21:07</td>
+                            <td>Café, almoço e janta</td>
+                            <td>10h17</td>
+                            <td class="positivo">+2h17</td>
+                        </tr>
+                        <tr>
+                            <td>20/08</td>
+                            <td>05:10 / 10:00 / 15:45</td>
+                            <td>08:45 / 14:00 / 20:00</td>
+                            <td>Café, almoço e janta</td>
+                            <td>11h50</td>
+                            <td class="positivo">+3h50</td>
+                        </tr>
+                        <tr>
+                            <td>21/08</td>
+                            <td>05:20 / 15:45</td>
+                            <td>11:50 / 20:10</td>
+                            <td>Café/almoço e janta</td>
+                            <td>10h55</td>
+                            <td class="positivo">+2h55</td>
+                        </tr>
+                        <tr>
+                            <td>22/08</td>
+                            <td>05:40 / 10:10 / 16:00</td>
+                            <td>08:45 / 12:40 / 19:45</td>
+                            <td>Café, almoço e janta</td>
+                            <td>8h40</td>
+                            <td class="positivo">+0h40</td>
+                        </tr>
+                        <tr>
+                            <td>23/08</td>
+                            <td>05:45 / 10:35 / 17:10</td>
+                            <td>08:45 / 13:30 / 20:10</td>
+                            <td>Café, almoço e janta</td>
+                            <td>8h55</td>
+                            <td class="positivo">+0h55</td>
+                        </tr>
+                        <tr>
+                            <td>24/08</td>
+                            <td>05:45 / 10:10 / 15:45</td>
+                            <td>08:30 / 13:10 / 20:00</td>
+                            <td>Café, almoço e janta</td>
+                            <td>10h10</td>
+                            <td class="positivo">+2h10</td>
+                        </tr>
+                        <tr>
+                            <td>25/08</td>
+                            <td>05:45 / 17:00</td>
+                            <td>12:30 / 20:30</td>
+                            <td>Café/almoço e janta</td>
+                            <td>10h15</td>
+                            <td class="positivo">+2h15</td>
+                        </tr>
+                        <tr>
+                            <td>26/08</td>
+                            <td>05:50 / 10:15 / 17:00</td>
+                            <td>08:45 / 12:35 / 19:55</td>
+                            <td>Café, almoço e janta</td>
+                            <td>7h40</td>
+                            <td class="negativo">-0h20</td>
+                        </tr>
+                        <tr>
+                            <td>27/08</td>
+                            <td>05:50</td>
+                            <td>07:24</td>
+                            <td>Início da folga</td>
+                            <td>1h34</td>
+                            <td class="negativo">-6h26</td>
+                        </tr>
+                        <tr class="folga">
+                            <td>28/08 a 01/09</td>
+                            <td colspan="5" style="text-align: center;">PERÍODO DE FOLGA</td>
+                        </tr>
 
-+                    <!-- Início de Setembro -->
-+                    <tr class="month-start">
-+                        <td colspan="6" style="text-align:center; background:#eef6ff; font-weight:bold;">Início de Setembro — 01/09 (retorno de folga)</td>
-+                    </tr>
++                        <!-- Início de Setembro -->
++                        <tr class="month-start">
++                            <td colspan="6" style="text-align:center; background:#eef6ff; font-weight:bold;">Início de Setembro — 01/09 (retorno de folga)</td>
++                        </tr>
 +
-                    <tr>
-                        <td>02/09</td>
-                        <td>05:30 / 16:45</td>
-                        <td>13:18 / 20:30</td>
-                        <td>Café e janta</td>
-                        <td>11h33</td>
-                        <td class="positivo">+3h33</td>
-                    </tr>
-                    <tr>
-                        <td>03/09</td>
-                        <td>05:10 / 10:40 / 16:50</td>
-                        <td>09:50 / 13:15 / 20:05</td>
-                        <td>Café, almoço e janta</td>
-                        <td>10h30</td>
-                        <td class="positivo">+2h30</td>
-                    </tr>
-                    <tr>
-                        <td>04/09</td>
-                        <td>05:30 / 10:05 / 17:00</td>
-                        <td>07:57 / 12:35 / 19:50</td>
-                        <td>Café, almoço e janta</td>
-                        <td>7h47</td>
-                        <td class="negativo">-0h13</td>
-                    </tr>
-                    <tr>
-                        <td>05/09</td>
-                        <td>05:30 / 17:00</td>
-                        <td>13:00 / 20:20</td>
-                        <td>Café/almoço (sem intervalo) e janta</td>
-                        <td>10h50</td>
-                        <td class="positivo">+2h50</td>
-                    </tr>
-                    <tr>
-                        <td>06/09</td>
-                        <td>05:45 / 10:10 / 17:10</td>
-                        <td>08:00 / 12:35 / 19:50</td>
-                        <td>Café, almoço e janta</td>
-                        <td>7h20</td>
-                        <td class="negativo">-0h40</td>
-                    </tr>
-                    <tr>
-                        <td>08/09</td>
-                        <td>06:40</td>
-                        <td>14:10 (com intervalo 8:30-9:33)</td>
-                        <td>Primeiro dia de escritório</td>
-                        <td>6h33</td>
-                        <td class="negativo">-1h27</td>
-                    </tr>
-                    <tr>
-                        <td>09/09</td>
-                        <td>07:00 / 18:00</td>
-                        <td>14:00 / 19:00</td>
-                        <td>Escritório</td>
-                        <td>8h00</td>
-                        <td>0h00</td>
-                    </tr>
-                    <tr>
-                        <td>10/09</td>
-                        <td>05:10 / 08:20</td>
-                        <td>08:20 / 13:00</td>
-                        <td>Café e recepção</td>
-                        <td>8h10</td>
-                        <td class="positivo">+0h10</td>
-                    </tr>
-                    <tr>
-                        <td>11/09</td>
-                        <td>06:30</td>
-                        <td>20:50 (compras às 10:27)</td>
-                        <td>Recepção e compras</td>
-                        <td>14h20</td>
-                        <td class="positivo">+6h20</td>
-                    </tr>
-                    <tr>
-                        <td>12/09</td>
-                        <td>06:40</td>
-                        <td>14:40</td>
-                        <td>Recepção</td>
-                        <td>8h00</td>
-                        <td>0h00</td>
-                    </tr>
-                    <tr>
-                        <td>13/09</td>
-                        <td>06:50 / 19:00</td>
-                        <td>14:20 / 19:50</td>
-                        <td>Recepção</td>
-                        <td>8h20</td>
-                        <td class="positivo">+0h20</td>
-                    </tr>
-                    <tr>
-                        <td>14/09</td>
-                        <td>07:30</td>
-                        <td>20:00 (intervalo 13:40-19:00)</td>
-                        <td>Recepção</td>
-                        <td>6h30</td>
-                        <td class="negativo">-1h30</td>
-                    </tr>
-                    <tr>
-                        <td>15/09</td>
-                        <td>06:50 / 19:00</td>
-                        <td>15:50 / 20:00</td>
-                        <td>Recepção e janta</td>
-                        <td>10h00</td>
-                        <td class="positivo">+2h00</td>
-                    </tr>
-                    <tr>
-                        <td>16/09</td>
-                        <td>06:50</td>
-                        <td>13:50</td>
-                        <td>Recepção e trilha na aventura</td>
-                        <td>7h00</td>
-                        <td class="negativo">-1h00</td>
-                    </tr>
-                    <tr>
-                        <td>17/09</td>
-                        <td>06:50</td>
-                        <td>20:00 (intervalos 9:00-10:30 e 14:10-18:00)</td>
-                        <td>Recepção</td>
-                        <td>5h10</td>
-                        <td class="negativo">-2h50</td>
-                    </tr>
-                    <tr>
-                        <td>18/09</td>
-                        <td>06:50</td>
-                        <td>? (intervalos 9:00-10:50 e 14:15-?)</td>
-                        <td>Recepção</td>
-                        <td>~5h</td>
-                        <td class="negativo">~-3h</td>
-                    </tr>
-                    <tr>
-                        <td>19/09</td>
-                        <td>07:00</td>
-                        <td>18:00 (intervalos 9:00-10:30 e 14:00-16:40)</td>
-                        <td>Recepção</td>
-                        <td>6h50</td>
-                        <td class="negativo">-1h10</td>
-                    </tr>
-                    <tr>
-                        <td>20/09</td>
-                        <td colspan="5" style="text-align: center;">ATESTADO MÉDICO</td>
-                    </tr>
-                    <tr>
-                        <td>21/09</td>
-                        <td>07:00</td>
-                        <td>05:30 (próximo dia) - Saída para Cuiabá 12:20</td>
-                        <td>Recepção e viagem</td>
-                        <td>22h30</td>
-                        <td class="positivo">+14h30</td>
-                    </tr>
-                    <tr>
-                        <td>22/09</td>
-                        <td>06:50</td>
-                        <td>16:50 (intervalo 9:00-?) - Saída para Cuiabá 12:00</td>
-                        <td>Recepção e viagem</td>
-                        <td>~8h</td>
-                        <td>~0h</td>
-                    </tr>
-                    <tr>
-                        <td>23/09</td>
-                        <td>06:45</td>
-                        <td>? (intervalo 13:00-16:00)</td>
-                        <td>Recepção</td>
-                        <td>~6h</td>
-                        <td class="negativo">~-2h</td>
-                    </tr>
-                    <tr class="folga">
-                        <td>24/09 a 06/10</td>
-                        <td colspan="5" style="text-align: center;">PERÍODO DE FOLGA (13 dias)</td>
-                    </tr>
-                    <tr>
-                        <td>07/10</td>
-                        <td>12:20 / 17:30</td>
-                        <td>14:24 / 20:00</td>
-                        <td>Recepção</td>
-                        <td>4h34</td>
-                        <td class="negativo">-3h26</td>
-                    </tr>
-                    <tr>
-                        <td>08/10</td>
-                        <td>07:00</td>
-                        <td>16:30</td>
-                        <td>Recepção, Poconé (enterro), resgate de carro</td>
-                        <td>9h30</td>
-                        <td class="positivo">+1h30</td>
-                    </tr>
-                    <tr>
-                        <td>09/10</td>
-                        <td>07:30</td>
-                        <td>19:40 (intervalo 14:20-18:00)</td>
-                        <td>Buscar turistas no aeroporto</td>
-                        <td>8h30</td>
-                        <td class="positivo">+0h30</td>
-                    </tr>
-                    <tr>
-                        <td>10/10</td>
-                        <td>07:10</td>
-                        <td>20:11 (intervalo 9:30-11:30) - Poconé</td>
-                        <td>Recepção, levar funcionários para exames, compras</td>
-                        <td>11h01</td>
-                        <td class="positivo">+3h01</td>
-                    </tr>
-                    <tr>
-                        <td>11/10</td>
-                        <td>07:00</td>
-                        <td>20:00 (intervalo 8:30-11:00)</td>
-                        <td>Recepção, levar hóspedes ao aeroporto</td>
-                        <td>11h30</td>
-                        <td class="positivo">+3h30</td>
-                    </tr>
-                    <tr>
-                        <td>12/10</td>
-                        <td>07:00</td>
-                        <td>19:40 (Saída para Cuiabá 8:00, médico, janta 19:00-19:40)</td>
-                        <td>Recepção, levar turistas a Cuiabá, médico</td>
-                        <td>5h40</td>
-                        <td class="negativo">-2h20</td>
-                    </tr>
-                    <tr>
-                        <td>13/10</td>
-                        <td>09:00</td>
-                        <td>21:40 (Saída 12:30)</td>
-                        <td>Recepção, levar turista, compras</td>
-                        <td>4h10</td>
-                        <td class="negativo">-3h50</td>
-                    </tr>
-                    <tr>
-                        <td>14/10</td>
-                        <td>07:00</td>
-                        <td>20:45</td>
-                        <td>Recepção, transfer de turistas, Cuiabá, compras</td>
-                        <td>13h45</td>
-                        <td class="positivo">+5h45</td>
-                    </tr>
-                    <tr>
-                        <td>15/10</td>
-                        <td>08:00</td>
-                        <td>20:00 (intervalo 12:28-18:30)</td>
-                        <td>Recepção</td>
-                        <td>5h42</td>
-                        <td class="negativo">-2h18</td>
-                    </tr>
-                    <tr>
-                        <td>16/10</td>
-                        <td>08:00</td>
-                        <td>20:35 (Saída para Cuiabá 13:00)</td>
-                        <td>Recepção, aeroporto, hospital, supermercado</td>
-                        <td>7h35</td>
-                        <td class="negativo">-0h25</td>
-                    </tr>
-                    <tr class="folga">
-                        <td>17/10</td>
-                        <td colspan="5" style="text-align: center;">DIA LIVRE</td>
-                    </tr>
-                    <tr>
-                        <td>18/10</td>
-                        <td>08:20</td>
-                        <td>19:00 (Saída 12:00, carro quebrou)</td>
-                        <td>Escritório, buscar passageiros, problemas com carro</td>
-                        <td>10h40</td>
-                        <td class="positivo">+2h40</td>
-                    </tr>
-                    <tr>
-                        <td>19/10</td>
-                        <td>09:00</td>
-                        <td>19:30 (intervalo 15:00-18:00)</td>
-                        <td>Viagem Cuiabá-pousada, recepção</td>
-                        <td>7h30</td>
-                        <td class="negativo">-0h30</td>
-                    </tr>
-                    <tr>
-                        <td>20/10</td>
-                        <td>07:00 / 18:40</td>
-                        <td>08:40 / 19:50</td>
-                        <td>Recepção, dia tranquilo</td>
-                        <td>3h50</td>
-                        <td class="negativo">-4h10</td>
-                    </tr>
-                    <tr>
-                        <td>21/10</td>
-                        <td>07:15</td>
-                        <td>? (intervalos 9:50-11:30 e 13:50-?)</td>
-                        <td>Recepção, levar Yan para aventura</td>
-                        <td>~5h</td>
-                        <td class="negativo">~-3h</td>
-                    </tr>
-                    <tr>
-                        <td>22/10</td>
-                        <td>07:40</td>
-                        <td>20:26 (intervalo 9:30-11:30)</td>
-                        <td>Recepção, aeroporto, rodoviária, mercado</td>
-                        <td>10h46</td>
-                        <td class="positivo">+2h46</td>
-                    </tr>
-                    <tr>
-                        <td>23/10</td>
-                        <td>08:00</td>
-                        <td>18:30 (intervalo 12:30-15:30)</td>
-                        <td>Recepção</td>
-                        <td>7h30</td>
-                        <td class="negativo">-0h30</td>
-                    </tr>
-                </tbody>
-            </table>
+                        <tr>
+                            <td>02/09</td>
+                            <td>05:30 / 16:45</td>
+                            <td>13:18 / 20:30</td>
+                            <td>Café e janta</td>
+                            <td>11h33</td>
+                            <td class="positivo">+3h33</td>
+                        </tr>
+                        <tr>
+                            <td>03/09</td>
+                            <td>05:10 / 10:40 / 16:50</td>
+                            <td>09:50 / 13:15 / 20:05</td>
+                            <td>Café, almoço e janta</td>
+                            <td>10h30</td>
+                            <td class="positivo">+2h30</td>
+                        </tr>
+                        <tr>
+                            <td>04/09</td>
+                            <td>05:30 / 10:05 / 17:00</td>
+                            <td>07:57 / 12:35 / 19:50</td>
+                            <td>Café, almoço e janta</td>
+                            <td>7h47</td>
+                            <td class="negativo">-0h13</td>
+                        </tr>
+                        <tr>
+                            <td>05/09</td>
+                            <td>05:30 / 17:00</td>
+                            <td>13:00 / 20:20</td>
+                            <td>Café/almoço (sem intervalo) e janta</td>
+                            <td>10h50</td>
+                            <td class="positivo">+2h50</td>
+                        </tr>
+                        <tr>
+                            <td>06/09</td>
+                            <td>05:45 / 10:10 / 17:10</td>
+                            <td>08:00 / 12:35 / 19:50</td>
+                            <td>Café, almoço e janta</td>
+                            <td>7h20</td>
+                            <td class="negativo">-0h40</td>
+                        </tr>
+                        <tr>
+                            <td>08/09</td>
+                            <td>06:40</td>
+                            <td>14:10 (com intervalo 8:30-9:33)</td>
+                            <td>Primeiro dia de escritório</td>
+                            <td>6h33</td>
+                            <td class="negativo">-1h27</td>
+                        </tr>
+                        <tr>
+                            <td>09/09</td>
+                            <td>07:00 / 18:00</td>
+                            <td>14:00 / 19:00</td>
+                            <td>Escritório</td>
+                            <td>8h00</td>
+                            <td>0h00</td>
+                        </tr>
+                        <tr>
+                            <td>10/09</td>
+                            <td>05:10 / 08:20</td>
+                            <td>08:20 / 13:00</td>
+                            <td>Café e recepção</td>
+                            <td>8h10</td>
+                            <td class="positivo">+0h10</td>
+                        </tr>
+                        <tr>
+                            <td>11/09</td>
+                            <td>06:30</td>
+                            <td>20:50 (compras às 10:27)</td>
+                            <td>Recepção e compras</td>
+                            <td>14h20</td>
+                            <td class="positivo">+6h20</td>
+                        </tr>
+                        <tr>
+                            <td>12/09</td>
+                            <td>06:40</td>
+                            <td>14:40</td>
+                            <td>Recepção</td>
+                            <td>8h00</td>
+                            <td>0h00</td>
+                        </tr>
+                        <tr>
+                            <td>13/09</td>
+                            <td>06:50 / 19:00</td>
+                            <td>14:20 / 19:50</td>
+                            <td>Recepção</td>
+                            <td>8h20</td>
+                            <td class="positivo">+0h20</td>
+                        </tr>
+                        <tr>
+                            <td>14/09</td>
+                            <td>07:30</td>
+                            <td>20:00 (intervalo 13:40-19:00)</td>
+                            <td>Recepção</td>
+                            <td>6h30</td>
+                            <td class="negativo">-1h30</td>
+                        </tr>
+                        <tr>
+                            <td>15/09</td>
+                            <td>06:50 / 19:00</td>
+                            <td>15:50 / 20:00</td>
+                            <td>Recepção e janta</td>
+                            <td>10h00</td>
+                            <td class="positivo">+2h00</td>
+                        </tr>
+                        <tr>
+                            <td>16/09</td>
+                            <td>06:50</td>
+                            <td>13:50</td>
+                            <td>Recepção e trilha na aventura</td>
+                            <td>7h00</td>
+                            <td class="negativo">-1h00</td>
+                        </tr>
+                        <tr>
+                            <td>17/09</td>
+                            <td>06:50</td>
+                            <td>20:00 (intervalos 9:00-10:30 e 14:10-18:00)</td>
+                            <td>Recepção</td>
+                            <td>5h10</td>
+                            <td class="negativo">-2h50</td>
+                        </tr>
+                        <tr>
+                            <td>18/09</td>
+                            <td>06:50</td>
+                            <td>? (intervalos 9:00-10:50 e 14:15-?)</td>
+                            <td>Recepção</td>
+                            <td>~5h</td>
+                            <td class="negativo">~-3h</td>
+                        </tr>
+                        <tr>
+                            <td>19/09</td>
+                            <td>07:00</td>
+                            <td>18:00 (intervalos 9:00-10:30 e 14:00-16:40)</td>
+                            <td>Recepção</td>
+                            <td>6h50</td>
+                            <td class="negativo">-1h10</td>
+                        </tr>
+                        <tr>
+                            <td>20/09</td>
+                            <td colspan="5" style="text-align: center;">ATESTADO MÉDICO</td>
+                        </tr>
+                        <tr>
+                            <td>21/09</td>
+                            <td>07:00</td>
+                            <td>05:30 (próximo dia) - Saída para Cuiabá 12:20</td>
+                            <td>Recepção e viagem</td>
+                            <td>22h30</td>
+                            <td class="positivo">+14h30</td>
+                        </tr>
+                        <tr>
+                            <td>22/09</td>
+                            <td>06:50</td>
+                            <td>16:50 (intervalo 9:00-?) - Saída para Cuiabá 12:00</td>
+                            <td>Recepção e viagem</td>
+                            <td>~8h</td>
+                            <td>~0h</td>
+                        </tr>
+                        <tr>
+                            <td>23/09</td>
+                            <td>06:45</td>
+                            <td>? (intervalo 13:00-16:00)</td>
+                            <td>Recepção</td>
+                            <td>~6h</td>
+                            <td class="negativo">~-2h</td>
+                        </tr>
+                        <tr class="folga">
+                            <td>24/09 a 06/10</td>
+                            <td colspan="5" style="text-align: center;">PERÍODO DE FOLGA (13 dias)</td>
+                        </tr>
+                        <tr>
+                            <td>07/10</td>
+                            <td>12:20 / 17:30</td>
+                            <td>14:24 / 20:00</td>
+                            <td>Recepção</td>
+                            <td>4h34</td>
+                            <td class="negativo">-3h26</td>
+                        </tr>
+                        <tr>
+                            <td>08/10</td>
+                            <td>07:00</td>
+                            <td>16:30</td>
+                            <td>Recepção, Poconé (enterro), resgate de carro</td>
+                            <td>9h30</td>
+                            <td class="positivo">+1h30</td>
+                        </tr>
+                        <tr>
+                            <td>09/10</td>
+                            <td>07:30</td>
+                            <td>19:40 (intervalo 14:20-18:00)</td>
+                            <td>Buscar turistas no aeroporto</td>
+                            <td>8h30</td>
+                            <td class="positivo">+0h30</td>
+                        </tr>
+                        <tr>
+                            <td>10/10</td>
+                            <td>07:10</td>
+                            <td>20:11 (intervalo 9:30-11:30) - Poconé</td>
+                            <td>Recepção, levar funcionários para exames, compras</td>
+                            <td>11h01</td>
+                            <td class="positivo">+3h01</td>
+                        </tr>
+                        <tr>
+                            <td>11/10</td>
+                            <td>07:00</td>
+                            <td>20:00 (intervalo 8:30-11:00)</td>
+                            <td>Recepção, levar hóspedes ao aeroporto</td>
+                            <td>11h30</td>
+                            <td class="positivo">+3h30</td>
+                        </tr>
+                        <tr>
+                            <td>12/10</td>
+                            <td>07:00</td>
+                            <td>19:40 (Saída para Cuiabá 8:00, médico, janta 19:00-19:40)</td>
+                            <td>Recepção, levar turistas a Cuiabá, médico</td>
+                            <td>5h40</td>
+                            <td class="negativo">-2h20</td>
+                        </tr>
+                        <tr>
+                            <td>13/10</td>
+                            <td>09:00</td>
+                            <td>21:40 (Saída 12:30)</td>
+                            <td>Recepção, levar turista, compras</td>
+                            <td>4h10</td>
+                            <td class="negativo">-3h50</td>
+                        </tr>
+                        <tr>
+                            <td>14/10</td>
+                            <td>07:00</td>
+                            <td>20:45</td>
+                            <td>Recepção, transfer de turistas, Cuiabá, compras</td>
+                            <td>13h45</td>
+                            <td class="positivo">+5h45</td>
+                        </tr>
+                        <tr>
+                            <td>15/10</td>
+                            <td>08:00</td>
+                            <td>20:00 (intervalo 12:28-18:30)</td>
+                            <td>Recepção</td>
+                            <td>5h42</td>
+                            <td class="negativo">-2h18</td>
+                        </tr>
+                        <tr>
+                            <td>16/10</td>
+                            <td>08:00</td>
+                            <td>20:35 (Saída para Cuiabá 13:00)</td>
+                            <td>Recepção, aeroporto, hospital, supermercado</td>
+                            <td>7h35</td>
+                            <td class="negativo">-0h25</td>
+                        </tr>
+                        <tr class="folga">
+                            <td>17/10</td>
+                            <td colspan="5" style="text-align: center;">DIA LIVRE</td>
+                        </tr>
+                        <tr>
+                            <td>18/10</td>
+                            <td>08:20</td>
+                            <td>19:00 (Saída 12:00, carro quebrou)</td>
+                            <td>Escritório, buscar passageiros, problemas com carro</td>
+                            <td>10h40</td>
+                            <td class="positivo">+2h40</td>
+                        </tr>
+                        <tr>
+                            <td>19/10</td>
+                            <td>09:00</td>
+                            <td>19:30 (intervalo 15:00-18:00)</td>
+                            <td>Viagem Cuiabá-pousada, recepção</td>
+                            <td>7h30</td>
+                            <td class="negativo">-0h30</td>
+                        </tr>
+                        <tr>
+                            <td>20/10</td>
+                            <td>07:00 / 18:40</td>
+                            <td>08:40 / 19:50</td>
+                            <td>Recepção, dia tranquilo</td>
+                            <td>3h50</td>
+                            <td class="negativo">-4h10</td>
+                        </tr>
+                        <tr>
+                            <td>21/10</td>
+                            <td>07:15</td>
+                            <td>? (intervalos 9:50-11:30 e 13:50-?)</td>
+                            <td>Recepção, levar Yan para aventura</td>
+                            <td>~5h</td>
+                            <td class="negativo">~-3h</td>
+                        </tr>
+                        <tr>
+                            <td>22/10</td>
+                            <td>07:40</td>
+                            <td>20:26 (intervalo 9:30-11:30)</td>
+                            <td>Recepção, aeroporto, rodoviária, mercado</td>
+                            <td>10h46</td>
+                            <td class="positivo">+2h46</td>
+                        </tr>
+                        <tr>
+                            <td>23/10</td>
+                            <td>08:00</td>
+                            <td>18:30 (intervalo 12:30-15:30)</td>
+                            <td>Recepção</td>
+                            <td>7h30</td>
+                            <td class="negativo">-0h30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
         
         <section>
