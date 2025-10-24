@@ -19,15 +19,18 @@
             padding: 20px;
         }
         
-        /* Responsividade: wrapper para permitir scroll horizontal em tabelas largas */
+        /* Responsividade: wrapper para permitir leitura em telas pequenas sem scroll lateral */
         .table-responsive {
             width: 100%;
-            overflow-x: auto;
+            overflow-x: visible; /* sem rolagem lateral */
             -webkit-overflow-scrolling: touch;
         }
 
         table {
-            min-width: 760px; /* mantém layout em desktop, permitirá scroll em mobile */
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+            min-width: 0; /* permitir que quebre e se ajuste ao container */
         }
 
         th, td {
@@ -42,8 +45,28 @@
             .periodo { font-size: 1rem; }
             th, td { padding: 8px 10px; font-size: 0.9rem; }
             .card .valor { font-size: 1.4rem; }
-            /* reduz min-width da tabela para favorecer scroll e leitura */
-            table { min-width: 640px; }
+            /* layout mobile: transformar cada linha da tabela em card vertical */
+            .table-responsive { overflow-x: visible; }
+            table thead { display: none; }
+            table, tbody, tr, td { display: block; width: 100%; }
+            tr { margin-bottom: 12px; border: 1px solid #eee; border-radius: 8px; padding: 10px; background: #fff; }
+            td { 
+                display: flex; 
+                justify-content: space-between; 
+                padding: 8px 10px; 
+                white-space: normal; /* permitir quebra de linha nos conteúdos longos */
+                align-items: center;
+                border: none;
+            }
+            td + td { border-top: 1px solid #f0f0f0; }
+            td::before { 
+                content: attr(data-label); 
+                font-weight: 600; 
+                color: #555; 
+                margin-right: 8px;
+                flex: 0 0 45%;
+            }
+            td > .valor-cell { flex: 1; text-align: right; }
         }
         
         .container {
@@ -245,8 +268,8 @@
         <section>
             <h2>Detalhamento por Dia</h2>
             <div class="table-responsive">
-                <table>
-                    <thead>
+            <table>
+                <thead>
                         <tr>
                             <th>Data</th>
                             <th>Entrada</th>
@@ -866,8 +889,33 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // atribui data-label nas células com base no cabeçalho (para usar no CSS mobile)
+            (function addDataLabelsToTable() {
+                const table = document.querySelector('.table-responsive table');
+                if (!table) return;
+                const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+                table.querySelectorAll('tbody tr').forEach(row => {
+                    const cells = Array.from(row.children);
+                    // pular linhas de agrupamento (colspan)
+                    if (cells.length === 1 && cells[0].getAttribute('colspan')) return;
+                    cells.forEach((cell, i) => {
+                        if (!cell.hasAttribute('data-label')) {
+                            const label = headers[i] || '';
+                            cell.setAttribute('data-label', label);
+                            // encapsula conteúdo longo em span para alinhar à direita se necessário
+                            if (!cell.querySelector('.valor-cell')) {
+                                const wrapper = document.createElement('span');
+                                wrapper.className = 'valor-cell';
+                                while (cell.firstChild) wrapper.appendChild(cell.firstChild);
+                                cell.appendChild(wrapper);
+                            }
+                        }
+                    });
+                });
+            })();
+
+            // mantém funcionalidade de expandir detalhes (se houver)
             const expandButtons = document.querySelectorAll('.detalhes-expandir');
-            
             expandButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const details = this.nextElementSibling;
